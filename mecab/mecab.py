@@ -44,3 +44,13 @@ class MeCab:  # APIs are inspried by KoNLPy
             morpheme for morpheme, pos in self.pos(sentence)
             if pos.startswith('N')
         ]
+
+    def analyze(self, sentence):
+        lattice = _create_lattice(sentence)
+        if not self.tagger.parse(lattice):
+            raise MeCabError(self.tagger.what())
+
+        return [
+            (node.surface, node.feature)
+            for node in lattice
+        ]
