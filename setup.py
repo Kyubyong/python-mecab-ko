@@ -124,8 +124,8 @@ with open('README.md', 'r', encoding='utf-8') as input_file:
     long_description = input_file.read()
 
 setup(
-    name='python-mecab-ko2',
-    version='1.0.8',
+    name='python-mecab-ko',
+    version='1.0.9',
     url='https://github.com/kyubyong/python-mecab-ko',
     author='Jonghwan Hyeon',
     author_email='hyeon0145@gmail.com',
